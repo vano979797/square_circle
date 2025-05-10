@@ -1,6 +1,8 @@
 import pytest
-from geometry.circle import Circle
 import math
+
+from geometry.circle import Circle
+
 
 def test_circle_area():
     c = Circle(2)
@@ -9,3 +11,7 @@ def test_circle_area():
 def test_invalid_radius():
     with pytest.raises(ValueError):
         Circle(0)
+
+def test_radius_less_than_zero():
+    with pytest.raises(ValueError):
+        Circle(-0.1)
